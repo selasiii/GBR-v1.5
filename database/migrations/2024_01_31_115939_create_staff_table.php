@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('staff', function (Blueprint $table) {
             $table->id();
             $table->uuid('staff_id')->unique();
-            $table->foreignId('role_id');
+            $table->foreignId('role_id')->references('role_id')->on('roles');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email')->unique();

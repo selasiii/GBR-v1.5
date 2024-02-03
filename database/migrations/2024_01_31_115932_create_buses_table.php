@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('capacity');
             $table->string('model');
             $table->string('make');
-            $table->string('year');
+            $table->integer('year');
             $table->string('color');
             $table->string('parked_at');
             $table->enum('status',['active', 'inactive'])->default('active');

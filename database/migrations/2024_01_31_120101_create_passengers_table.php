@@ -16,7 +16,6 @@ return new class extends Migration
             $table->foreignUuid('ticket_id')->references('ticket_id')->on('tickets')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignUuid('travel_id')->references('travel_id')->on('travels')->onUpdate('cascade')->onDelete('cascade');
             $table->boolean('checked_in')->default(false);
-
             $table->timestamps();
         });
     }

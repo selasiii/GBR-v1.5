@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('routes', function (Blueprint $table) {
             $table->uuid('route_id')->primary();
             $table->string('route_name');
+            $table->decimal('base_price', 10, 2);
             $table->foreignUuid('start_terminal_id')->references('terminal_id')->on('terminals')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignUuid('end_terminal_id')->references('terminal_id')->on('terminals')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();

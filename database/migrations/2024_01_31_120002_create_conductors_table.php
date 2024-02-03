@@ -13,7 +13,7 @@ return new class extends Migration {
         Schema::create('conductors', function (Blueprint $table) {
             $table->id();
             $table->uuid('conductor_id')->unique();
-            $table->foreignId('role_id');
+            $table->foreignId('role_id')->references('role_id')->on('roles');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email')->unique();
@@ -21,7 +21,7 @@ return new class extends Migration {
             $table->string('address')->nullable();
             $table->string('phone_number')->unique();
             $table->string('password');
-            $table->string('gender')->default('unknown');
+            $table->string('gender')->nullable();
             $table->date('date_of_birth')->nullable()->default(null);
             $table->rememberToken();
             $table->timestamps();

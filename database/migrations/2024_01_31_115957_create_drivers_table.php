@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->uuid('driver_id')->unique();
             $table->string('licence_number');
-            $table->foreignId('role_id');
+            $table->foreignId('role_id')->references('role_id')->on('roles');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email')->unique();
